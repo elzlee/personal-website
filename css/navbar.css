@@ -1,0 +1,112 @@
+
+#navbar {
+    position: fixed;
+    top: 30px; /* Initial position slightly lowered to give space from the top */
+    left: 50%;  /* Center the navbar horizontally */
+    transform: translateX(-50%); /* Center it based on its width */
+    width: 850px; /* TODO: mobile compatibility*/
+    background: white;
+    padding: 0px 40px ;
+    border-radius: 15px;
+    box-shadow: 0 8px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    transition: top 0.5s ease; /* Increase transition time and use 'ease' for smoother effect */
+    text-decoration: none;
+    border: 1px solid black; /* Specify border width and style */
+    font-size:13px;
+}
+
+#navbar.hide {
+    top: -120px; /* Adjust this value so the navbar completely leaves the viewport */
+}
+
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+#navbar li {
+    padding: 5px 10px 5px 10px;
+    border-radius: 20px;
+    flex-grow: 1;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgb(35, 35, 35);
+    transition: color 3.0s;
+    display: block;
+    text-align: center;
+    position: relative; /* Necessary for positioning the pseudo-element */
+    width:auto;
+    font-weight:550;
+}
+
+.nav-link span {
+    position: relative; /* Make span relative to position pseudo-elements */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Align at the bottom of the link */
+    left: 50%;
+    transform: translateX(-50%); /* Center the pseudo-element */
+    background-color: transparent; /* Start with a transparent background */
+}
+
+.nav-link.inactive:hover::after {
+    background-color: #DCCDE8; /* Change to the desired color on hover */
+    width: 60%; /* Cover the full width of the text */
+    height: 4px; /* Thickness of the underline */
+
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black; /* Specify border width and style */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto; /* Centers the circle horizontally within its container */
+    text-decoration: none; /* Removes underline from link */
+    overflow: hidden; /* Ensures no overflow text outside the circle */
+    transition: transform 0.6s ease; /* Smooth transition for both transform and font-size */
+}
+
+.logo-circle a {
+    color: black;
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    width: 100%; /* Full width to fill circle */
+    height: 100%; /* Full height to fill circle */
+    text-decoration: none; /* Removes underline from the link */
+}
+
+.logo-circle span {
+    text-align: center; /* Ensures text is centered if not fully flex-aligned */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    transition: font-size 0.6s ease; /* Ensure font size transitions smoothly */
+
+}
+
+.logo-circle:hover, .logo-circle:hover a, .logo-circle:hover span {
+    transform: scale(1.1); /* Enlarges the circle and its contents by 10% */
+    font-size: 16px; /* Increases font size */
+
+}
+
+.nav-link.active {
+    color: #DCCDE8; /* Change the text color for better visibility */
+}

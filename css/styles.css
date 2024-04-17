@@ -1,0 +1,228 @@
+/* Loading screen */
+.loading-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+.circle:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.circle:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Homepage structure */
+/* Homepage structure */
+#greeting-title {
+    font-size: 50px;
+    font-weight: 700;
+    width: 70%;
+    min-height: 140px; /* Set a minimum height that accommodates two lines of text */
+}
+#greeting-subtitle {
+    color: #EA526F;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#greeting-content {
+    font-size: 16px;
+    color: #333;
+    margin-right: 45px;
+    line-height: 30px;
+    margin-top:30px;
+}
+
+#greeting-prev {
+    margin-top:30px;
+    color: rgb(172, 171, 171);
+    white-space: nowrap;  /* Keeps all text on a single line */
+    overflow: hidden;     /* Prevents text from spilling outside the container */
+    text-overflow: ellipsis; /* Adds an ellipsis if the text is too long to fit */
+    font-size: 16px;      /* Adjust the font size as needed */
+}
+
+#greeting-prev a {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit;        /* Inherits color from parent element */
+}
+
+#greeting-prev a:hover {
+    color: #EA526F;        /* Changes color on hover */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#homepage-container {
+    display: flex;
+    justify-content: center;
+    width: 95%; /* Max width */
+    max-width: 1200px; /* Limiting max width for better control */
+}
+
+#left-side {
+    flex: 1;
+    background-color: white;
+    padding: 15px;
+}
+
+#right-side {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adapts number of columns based on available space */
+    gap: 20px; /* Sets gap between grid items */
+    padding: 20px; /* Padding inside the right side container */
+}
+
+@media (max-width: 800px) {
+    #homepage-container {
+        flex-direction: column;
+    }
+
+    #left-side, #right-side {
+        flex-basis: 100%;
+    }
+}
+
+/* SOCIAL MEDIA ICONS ON LEFT SIDE*/
+.social-media-icons {
+    display: flex; /* Aligns icons in a row */
+    gap: 10px; /* Space between icons */
+    margin-top:30px;
+}
+
+.icon-link {
+    display: flex; /* Ensures the icons align properly */
+    justify-content: center; /* Center icon inside the link */
+    align-items: center; /* Center icon vertically */
+    width: 40px; /* Size of the circular area */
+    height: 40px; /* Size of the circular area */
+    border-radius: 30%; /* Makes the link circular */
+    background-color: #ccc; /* Background color of the icon */
+    color: white; /* Color of the icon */
+    text-decoration: none; /* Removes underline from the link */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#resume-btn {
+    display: flex; /* Ensures the icons align properly */
+    justify-content: center; /* Center icon or text inside the link/button */
+    align-items: center; /* Center icon or text vertically */
+    border-radius: 14px; /* Makes the link circular */
+    background-color: #ccc; /* Background color of the icon */
+    color: white; /* Color of the icon */
+    text-decoration: none; /* Removes underline from the link */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    font-size: 16px; /* Font size for text in the button */
+    padding: 10px 20px; /* Padding to increase the width of the button based on text */
+    border: 2px solid transparent; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.icon-link:hover, #resume-btn:hover {
+    background-color: #EA526F; /* Darken the icon background on hover */
+    color: white;
+}
+
+/* Specific to the button */
+#resume-btn {
+    background-color: white; /* White background for the button */
+    color: #EA526F; /* Text color to match the outline */
+    border-color: #EA526F; /* Outline color */
+}
+
+/* Ensure icons are sized correctly */
+.icon-link i {
+    font-size: 24px; /* Icon size */
+}
+
+/* Homepage info boxes */
+.info-box {
+    aspect-ratio: 4 / 3;
+    font-size:16px;
+    padding: 15px;
+    background-color: #DCCDE8;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Combined transitions */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Allows absolute positioning of child pseudo-elements */
+}
+
+.info-box span {
+    position: relative; /* Needed to position the pseudo-element */
+    display: inline-block; /* Ensures the span does not take full width */
+}
+
+.info-box:hover span::after {
+    content: ''; /* Required for a pseudo-element */
+    position: absolute;
+    bottom: -10px; /* Spacing from the bottom of the text */
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #f9f9f9; /* for the underline */
+    width: 100%; /* This will make the underline span the full width of the text */
+    margin: 0 auto; /* Centers the underline */
+}
+
+.info-box:hover {
+    color:#f9f9f9;
+    background-color: black;
+    transform: translateY(-5px); /* Subtle bounce effect on hover */
+}
+
+/* Optional animations removed for clarity */
+
+
+
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+
+

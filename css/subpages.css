@@ -1,0 +1,20 @@
+.subpage-content{
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:60px;
+}
+
+.page-title-center, .page-title-left, .page-title-right{
+    margin-top:60px;
+    font-size:20px;
+    text-align: center;
+}
+
+.page-title-left{
+    text-align: left;
+}
+
+
+.page-title-right{
+    text-align: right;
+}
