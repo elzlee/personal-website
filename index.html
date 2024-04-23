@@ -3,6 +3,9 @@
 <head>
     <title>Elizabeth Lee</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Load library from the CDN -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -16,14 +19,23 @@
         <div class="circle"></div>
     </div> -->
     
+    <nav id="navbar">
+        <ul>
+            <li><a href="about.html" class="nav-link inactive"><span>About</span></a></li>
+            <li><a href="work.html" class="nav-link inactive"><span>Work</span></a></li>
+            <!--<li><div class="logo-circle"><a href="index.html"><span>EL</span></a></div></li>-->
+            <!--<li><a href="projects.html" class="nav-link inactive"><span>Projects</span></a></li>-->
+            <li><a href="fun.html" class="nav-link inactive"><span>For Fun</span></a></li>
+        </ul>
+    </nav>
 
     <!--<div id="homepage-container" style="display: none;">-->
-        <div id="homepage-container" >
+    <div id="homepage-container" >
         <div id="left-side">
             <div id="left-side-text" style="">
+                <div id="greeting-subtitle">Hello, my name is</div>
                 <div id="greeting-title"></div>
-                <div id="greeting-subtitle">Product manager based in NYC</div>
-                <div id="greeting-content">I'm interested in products at the intersection of artful UX design and user-focused technology. I studied Information Systems, Human-Computer Interaction, and Computer Science at Carnegie Mellon University.</div>
+                <div id="greeting-content">I'm an enthusiastic product manager interested in the intersection of artful UX design and user-focused technology. I studied Information Systems, Human-Computer Interaction, and Computer Science at Carnegie Mellon University.</div>
                 <div id="greeting-prev">
                     product 
                     <a href="https://www.atlassian.com/" target="_blank">@atlassian</a>
@@ -44,13 +56,18 @@
             </div>         
         </div>
         <div id="right-side">
-            <div class="info-box" style="font-size:30px;" onclick="location.href='about.html';"><span>About me</span></div>
+            <div class="profile-image-container">
+                <img src="img/pfp.jpg" alt="Profile Image" class="profile-image">
+            </div>
+            <!--<div class="info-box" style="font-size:30px;" onclick="location.href='about.html';"><span>About me</span></div>
             <div class="info-box" style="font-size:30px;" onclick="location.href='experience.html';"><span>Experience</span></div>
             <div class="info-box" style="font-size:30px;" onclick="location.href='projects.html';"><span>Projects</span></div>
             <div class="info-box" style="font-size:30px;" onclick="location.href='fun.html';"><span>Other fun stuff</span></div>
+            -->
         </div>
-            
-
+    </div>
+    <div>
+        scroll for more
     </div>
 
     <script src="js/script.js"></script>

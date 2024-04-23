@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
 */
 document.addEventListener('DOMContentLoaded', function() {
     var typed_title = new Typed('#greeting-title', {
-        strings: ['Hi, my name is Elizabeth Lee.'],
+        strings: ['Elizabeth Lee.'],
         typeSpeed: 50,
         showCursor: false,  // Show cursor during typing 
     });

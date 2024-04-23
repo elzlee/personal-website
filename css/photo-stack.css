@@ -1,0 +1,28 @@
+#photo-stack {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+#photo-stack img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+#photo-stack img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Stagger the images */
+#photo-stack img:nth-child(1) { transform: translateY(20px) translateX(20px); }
+#photo-stack img:nth-child(2) { transform: translateY(15px) translateX(15px); }
+#photo-stack img:nth-child(3) { transform: translateY(10px) translateX(10px); }
+#photo-stack img:nth-child(4) { transform: translateY(5px) translateX(5px); }
+#photo-stack img:nth-child(5) { transform: translateY(0px) translateX(0px); }

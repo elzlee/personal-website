@@ -1,0 +1,158 @@
+/* Homepage structure */
+#greeting-title {
+    font-size: 50px;
+    font-weight: 700;
+    width: 70%;
+    min-height: 80px; /* Set a minimum height that accommodates two lines of text */
+}
+#greeting-subtitle {
+    color: #EA526F;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#greeting-content {
+    font-size: 16px;
+    color: #333;
+    margin-right: 45px;
+    line-height: 30px;
+    margin-top:10px;
+}
+
+#greeting-prev {
+    margin-top:30px;
+    color: rgb(172, 171, 171);
+    white-space: nowrap;  /* Keeps all text on a single line */
+    overflow: hidden;     /* Prevents text from spilling outside the container */
+    text-overflow: ellipsis; /* Adds an ellipsis if the text is too long to fit */
+    font-size: 16px;      /* Adjust the font size as needed */
+}
+
+#greeting-prev a {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit;        /* Inherits color from parent element */
+}
+
+#greeting-prev a:hover {
+    color: #EA526F;        /* Changes color on hover */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#homepage-container {
+    display: flex;
+    justify-content: center;
+    width: 80%; /* Max width */
+    max-width: 1200px; /* Limiting max width for better control */
+}
+
+#left-side {
+    flex: 1;
+    background-color: white;
+    padding: 15px;
+}
+
+#right-side {
+    flex: 1;
+    /*display: grid;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adapts number of columns based on available space */
+    /*gap: 20px; /* Sets gap between grid items */
+    padding: 40px; /* Padding inside the right side container */
+}
+
+.profile-image-container {
+    height: 350px; 
+    width: 350px; 
+    overflow: hidden;
+    border-radius: 50%; /* This creates the circular shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #fff; /* Optional: for a white border around the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: for a shadow effect */
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+}
+
+
+@media (max-width: 800px) {
+    #homepage-container {
+        flex-direction: column;
+    }
+
+    #left-side, #right-side {
+        flex-basis: 100%;
+    }
+}
+
+
+/* Homepage info boxes */
+.info-box {
+    aspect-ratio: 4 / 3;
+    font-size:16px;
+    padding: 15px;
+    background-color: #DCCDE8;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Combined transitions */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Allows absolute positioning of child pseudo-elements */
+}
+
+.info-box span {
+    position: relative; /* Needed to position the pseudo-element */
+    display: inline-block; /* Ensures the span does not take full width */
+}
+
+.info-box:hover span::after {
+    content: ''; /* Required for a pseudo-element */
+    position: absolute;
+    bottom: -10px; /* Spacing from the bottom of the text */
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #f9f9f9; /* for the underline */
+    width: 100%; /* This will make the underline span the full width of the text */
+    margin: 0 auto; /* Centers the underline */
+}
+
+.info-box:hover {
+    color:#f9f9f9;
+    background-color: black;
+    transform: translateY(-5px); /* Subtle bounce effect on hover */
+}
+
+/* Optional animations removed for clarity */
+
+
+
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}

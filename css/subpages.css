@@ -1,20 +1,129 @@
+
+@font-face {
+    font-family: 'BluuNext-Titling';
+    src: url('../fonts/BluuNext-Titling.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'BluuNext-Bold';
+    src: url('../fonts/BluuNext-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'BluuNext-Bolditalic';
+    src: url('../fonts/BluuNext-Bolditalic.otf') format('opentype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top:100px;
+}
+
+
+
 .subpage-content{
-    margin-left:10%;
-    margin-right:10%;
-    margin-top:60px;
+    margin-left:15%;
+    margin-right:15%;
+    font-family: 'Cutive Mono', sans-serif;
+    font-weight:300;
+    font-size:20px;
+    line-height: 1.2
+}
+
+.title {
+    margin-bottom:20px;
 }
 
 .page-title-center, .page-title-left, .page-title-right{
-    margin-top:60px;
+    margin-top:0px;
     font-size:20px;
     text-align: center;
 }
 
+
+::selection {
+    color: black;        /* Sets the text color during selection */
+    background-color: #DCCDE8; /* Sets the background color during selection to purple */
+}
+
 .page-title-left{
     text-align: left;
+    font-size:30px;
+    width:60%;
+    font-family: 'BluuNext-Titling';
+    color: #212121;
 }
 
 
 .page-title-right{
     text-align: right;
 }
+
+.paragraph-left, .paragraph-right, .paragraph-center {
+    font-weight:300;
+    margin-top:5px;
+    margin-bottom:5px;
+    font-weight:lighter;
+    font-size:16px;
+}
+
+.paragraph-left{
+    width:60%;
+    font-weight:100;
+}
+
+
+/* --------------------- resume structure ------------------------*/
+.resume {
+    gap: 20px; /* Space between grid items */
+    max-width: 1000px;
+    margin-top:40px;
+}
+
+.resume-section {
+    display: grid; /* Use grid here instead of flex */
+    grid-template-columns: 1fr 2fr; /* Match the parent grid */
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.section-title {
+    /* grid-column: 1 / 2; /* Take up the first column */
+    width:300%;
+    font-family: 'BluuNext-Bold';
+    font-size: 30px;
+}
+
+.resume-entry {
+    display: grid; /* Grid to keep the alignment consistent */
+    grid-template-columns: 1fr 2fr; /* Set to 1fr 1fr for equal column widths */
+    gap: 10px; /* Optional: Space between the columns */
+    font-size:16px;
+    margin-top:15px;
+}
+
+.time-period {
+    font-size:15px;
+}
+
+.experience {
+}
+
+.job-title{
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.company{
+
+}
+
+.experience-details{
+
+}
+
+
