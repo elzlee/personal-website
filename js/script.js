@@ -1,11 +1,11 @@
-/*
+
 window.addEventListener('load', () => {
     setTimeout(() => {
         document.getElementById('loading-screen').style.display = 'none';
         document.getElementById('homepage-container').style.display = 'block';
     }, 3000); // 3000ms = 3 seconds
 });
-*/
+
 document.addEventListener('DOMContentLoaded', function() {
     var typed_title = new Typed('#greeting-title', {
         strings: ['Elizabeth Lee.'],

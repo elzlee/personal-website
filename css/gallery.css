@@ -1,36 +1,48 @@
-* { box-sizing: border-box; }
 
-/* force scrollbar */
-html { overflow-y: scroll; }
-
-body { font-family: sans-serif; }
-
-/* ---- grid ---- */
-
-.grid {
-    margin: 0 auto; /* Centering the grid if necessary */
-
+body { 
+    overflow-y: scroll; 
 }
 
-/* clear fix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
+.grid{
+    column-count: 4;                                                      
+    column-gap: 0; /* Set column gap to 0 if you want no space between images */
 
-/* ---- .grid-item ---- */
-
-.grid-sizer,
-.grid-item {
-  width: 33.333%;
 }
 
 .grid-item {
-  float: left;
+    width: 100%; /* makes each grid item full width within its column */
+    margin: 0;  /* removes any default margin */
+    position: relative; /* Needed to position the caption */
+    cursor: pointer; /* Optional: change the cursor on hover */
+  
+  img {
+    display: block; /* Removes bottom space/margin under the image */
+    width: 100%; /* Ensures images take up all the space of their container */
+    height: auto; /* Maintains aspect ratio */
+  }
 }
 
-.grid-item img {
-  display: block;
-  width: 100%;
+.grid-item .caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Hide caption initially */
+    transition: opacity 0.3s ease; /* Smooth transition for the hover effect */
+    text-align: center;
+    font-family: 'Cutive Mono', sans-serif;
+    font-weight:300;
+    font-size:16px;
+    line-height: 1.2;
+
+}
+
+.grid-item:hover .caption {
+    opacity: 1; /* Show caption on hover */
 }

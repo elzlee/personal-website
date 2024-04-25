@@ -82,7 +82,7 @@ body {
 .resume {
     gap: 20px; /* Space between grid items */
     max-width: 1000px;
-    margin-top:40px;
+    margin-top:70px;
 }
 
 .resume-section {
@@ -100,7 +100,7 @@ body {
 
 .resume-entry {
     display: grid; /* Grid to keep the alignment consistent */
-    grid-template-columns: 1fr 2fr; /* Set to 1fr 1fr for equal column widths */
+    grid-template-columns: 1fr 1.5fr; /* Set to 1fr 1fr for equal column widths */
     gap: 10px; /* Optional: Space between the columns */
     font-size:16px;
     margin-top:15px;
@@ -111,14 +111,18 @@ body {
 }
 
 .experience {
+    margin-bottom: 25px;;
 }
 
 .job-title{
     font-weight:bold;
-    margin-bottom:10px;
+    margin-top:3px;
+    margin-bottom:5px;
 }
 
 .company{
+    margin-bottom:10px;
+    font-style:italic;
 
 }
 
@@ -127,3 +131,16 @@ body {
 }
 
 
+.company-logo {
+    justify-content: center;
+    align-items: center;
+
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    margin-right:10px; /* Adds spacing between the image and the text */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.job-title, .company, .experience-details {
+}
