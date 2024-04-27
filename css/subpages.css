@@ -48,15 +48,18 @@ body {
 
 ::selection {
     color: black;        /* Sets the text color during selection */
-    background-color: #DCCDE8; /* Sets the background color during selection to purple */
+}
+
+.page-title-right, .page-title-left, .page-title-center{
+    font-size:30px;
+    font-family: 'BluuNext-Titling';
+    color: #212121;
 }
 
 .page-title-left{
     text-align: left;
-    font-size:30px;
     width:60%;
-    font-family: 'BluuNext-Titling';
-    color: #212121;
+
 }
 
 
@@ -64,6 +67,9 @@ body {
     text-align: right;
 }
 
+.page-title-center{
+    text-align: center;
+}
 .paragraph-left, .paragraph-right, .paragraph-center {
     font-weight:300;
     margin-top:5px;
@@ -140,7 +146,4 @@ body {
     border-radius: 50%; /* Makes the image circular */
     margin-right:10px; /* Adds spacing between the image and the text */
     object-fit: cover; /* Ensures the image covers the area without distortion */
-}
-
-.job-title, .company, .experience-details {
 }

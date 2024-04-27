@@ -1,0 +1,63 @@
+
+@font-face {
+    font-family: 'BluuNext-Titling';
+    src: url('../fonts/BluuNext-Titling.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'BluuNext-Bold';
+    src: url('../fonts/BluuNext-Bold.otf') format('opentype');
+}
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 40px; /* Space between grid items */
+  }
+  
+  @media (max-width: 800px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* Change to one column on small screens */
+    }
+  }
+
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+
+  }
+  
+  .grid-item a {
+    min-width: 500px; /* Ensures that items do not become too small */
+    width: 100%;
+    padding-top: 65%; /* 4:3 aspect ratio based on width */
+    position: relative;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensures no overflow of content */
+    box-shadow: none; /* Default no shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .grid-item a img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+  }
+  
+  .grid-item a:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); 
+  }
+
+  .project-name{
+    font-family: 'BluuNext-Bold';
+    margin-top: 20px;
+    margin-bottom:20px;
+    font-weight: 400;
+    font-size:30px;
+   
+  }
